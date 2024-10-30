@@ -29,7 +29,7 @@ public class VtnActualizarConferencia extends javax.swing.JFrame {
         Conferencia objConferencia = this.conferenciaServices.findById(idConferencia);
         this.jTextFieldId.setText(objConferencia.getId()+"");
         this.jTextFieldNombre.setText(objConferencia.getName());
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); 
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); 
         this.jTextFieldFechaInicio.setText(sdf.format(objConferencia.getStartDate()));
         this.jTextFieldFechaFin.setText(sdf.format(objConferencia.getEndDate()));
         this.jTextFieldCosto.setText(String.valueOf(objConferencia.getRegistrationCost()));
@@ -79,7 +79,7 @@ public class VtnActualizarConferencia extends javax.swing.JFrame {
         jPanelSuperiorLayout.setHorizontalGroup(
             jPanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSuperiorLayout.createSequentialGroup()
-                .addContainerGap(189, Short.MAX_VALUE)
+                .addContainerGap(200, Short.MAX_VALUE)
                 .addComponent(jLabelTitulo)
                 .addGap(167, 167, 167))
         );
@@ -155,12 +155,12 @@ public class VtnActualizarConferencia extends javax.swing.JFrame {
                             .addGap(132, 132, 132)))
                     .addComponent(jTextFieldFechaFin, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelCentralLayout.setVerticalGroup(
             jPanelCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelCentralLayout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelId)
                     .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -201,7 +201,7 @@ public class VtnActualizarConferencia extends javax.swing.JFrame {
         jPanelInferior.setLayout(jPanelInferiorLayout);
         jPanelInferiorLayout.setHorizontalGroup(
             jPanelInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 547, Short.MAX_VALUE)
+            .addGap(0, 558, Short.MAX_VALUE)
         );
         jPanelInferiorLayout.setVerticalGroup(
             jPanelInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,10 +268,11 @@ public class VtnActualizarConferencia extends javax.swing.JFrame {
 
         // Crear y guardar la conferencia
         Conferencia objConferencia = new Conferencia(nombre, fechaInicioDate, fechaFinDate, costoInscripcion, ubicacion, cantMaximArticles);
-        this.conferenciaServices.update(objConferencia.getId(), objConferencia);
+        this.conferenciaServices.update(idConference, objConferencia);
 
         if (objConferencia != null) {
             Utilidades.mensajeExito("Conferencia actualizada correctamente", "Conferencia actualizada");
+            setVisible(false);
         } else {
             Utilidades.mensajeError("Error al actualizar la conferencia", "Error al actualizar");
         }

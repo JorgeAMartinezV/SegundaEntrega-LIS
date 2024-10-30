@@ -60,6 +60,7 @@ public class ArticuloServicelmpl implements IArticuloService {
         ArticuloEntity articuloEntity = this.modelMapper.map(articulo, ArticuloEntity.class);
         ArticuloEntity articuloEntityActualizado = this.servicioAccesoBaseDatos.update(id, articuloEntity);
         ArticuloDTO articuloDTO = this.modelMapper.map(articuloEntityActualizado, ArticuloDTO.class);
+        servicioEnviarCorreo.sendMessage(articuloDTO);
         return articuloDTO;
     }
 

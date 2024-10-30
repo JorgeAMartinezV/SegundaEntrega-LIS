@@ -55,7 +55,10 @@ public class ConferenciaServicelmpl implements IConferenciaService {
     @Override
     public ConferenciaDTO update(ConferenciaDTO conferencia) {
         ConferenciaEntity conferenciaEntity = this.modelMapper.map(conferencia, ConferenciaEntity.class);
-        ConferenciaEntity objConferenciaEntity = this.servicioAccesoBaseDatos.save(conferenciaEntity);
+        ConferenciaEntity objConferenciaEntity = this.servicioAccesoBaseDatos.update(conferenciaEntity);
+        if(objConferenciaEntity == null) {
+            return null;
+        }
         ConferenciaDTO conferenciaDTO = this.modelMapper.map(objConferenciaEntity, ConferenciaDTO.class);
         return conferenciaDTO;
     }
