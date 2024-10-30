@@ -2,7 +2,7 @@ Elaborado por:
 
 - Fredy Esteban Anaya <fredyanaya@unicauca.edu.co>
 - Jorge Andres Martinez Varón <jorgeandre@unicauca.edu.co>
-- URL del video:
+- URL del video: https://youtu.be/i56v5Vy8Dwk
 - Puerto Microservicio Articulos: 5000
 - Puerto Microservicio Conferencias: 8080
 
