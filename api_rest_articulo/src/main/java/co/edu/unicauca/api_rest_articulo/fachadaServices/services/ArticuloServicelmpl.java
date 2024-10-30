@@ -78,6 +78,10 @@ public class ArticuloServicelmpl implements IArticuloService {
     public ArticulosConConferenciasDTO listarDatosArticulosConSusConferencias(Integer idArticulo) {
         List<ConferenciaDTO> listaDeConferencias = this.servicioConsumirObtencionConferencias.obtenerConferenciasDeArticulo(idArticulo);
         ArticuloEntity objArticuloEntity = this.servicioAccesoBaseDatos.findById(idArticulo);
+        if(objArticuloEntity == null) {
+            System.out.println("Ese articulo no existe");
+            return null;
+        }
         ArticuloDTO objArticuloDTO = this.modelMapper.map(objArticuloEntity, ArticuloDTO.class);
         ArticulosConConferenciasDTO objArticuloConferencia = new ArticulosConConferenciasDTO(objArticuloDTO, listaDeConferencias);
         return objArticuloConferencia;

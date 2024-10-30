@@ -204,9 +204,7 @@ public class ConferenciaRepository {
                 this.listaConferencias.add(new ConferenciaEntity(3, "Conferencia 3", formatter.parse("11/11/2002"), formatter.parse("11/11/2003"), 10.0f, "Popayan", 10, listaDeArticulosConferencia3));
                 ArrayList<ArticuloEntity> listaDeArticulosConferencia4 = new ArrayList<>();
                 ArticuloEntity articulo7 = new ArticuloEntity(5);
-                ArticuloEntity articulo8 = new ArticuloEntity(2);
                 listaDeArticulosConferencia4.add(articulo7);
-                listaDeArticulosConferencia4.add(articulo8);
                 this.listaConferencias.add(new ConferenciaEntity(4, "Conferencia 4", formatter.parse("11/11/2002"), formatter.parse("11/11/2003"), 10.0f, "Popayan", 10, listaDeArticulosConferencia4));
             } catch (ParseException e) {
             }
