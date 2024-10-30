@@ -11,10 +11,18 @@ public class MessageProducer {
     private final String exchange = "myExchange";
     private final String routingKey = "routingKey";
 
+    /**
+     * Constructor
+     * @param amqpTemplate
+     */
     public MessageProducer(AmqpTemplate amqpTemplate) {
         this.amqpTemplate = amqpTemplate;
     }
 
+    /**
+     * Envia un mensaje a la cola
+     * @param objArticuloCreado
+     */
     public void sendMessage(ArticuloDTO objArticuloCreado) {
         amqpTemplate.convertAndSend(exchange, routingKey, objArticuloCreado);
         System.out.println("Datos del articulo enviado a la cola");

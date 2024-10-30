@@ -25,6 +25,11 @@ public class ConferenciasService {
                 .bodyToMono(ConferenciaDTO[].class);
 
         ConferenciaDTO[] conferenciasArray = response.block();
+
+        System.out.println("Conferencias obtenidas: ");
+        for (ConferenciaDTO conferencia : conferenciasArray) {
+            System.out.println(conferencia.toString());
+        }
         return conferenciasArray != null ? List.of(conferenciasArray) : List.of();
     }
 }

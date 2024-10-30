@@ -11,6 +11,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ArticulosConConferenciasDTO {
-    private ArticuloDTO objArticuloDTO;
-    private List<ConferenciaDTO> conferencias;
+    private ArticuloDTO objArticuloDTO; // Objeto de tipo ArticuloDTO
+    private List<ConferenciaDTO> conferencias; // Lista de conferencias
 }

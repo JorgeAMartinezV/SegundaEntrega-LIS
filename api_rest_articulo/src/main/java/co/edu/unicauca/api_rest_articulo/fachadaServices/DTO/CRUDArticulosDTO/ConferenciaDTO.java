@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ConferenciaDTO {
-    private Integer id;
+    private Integer id; //Id de la conferencia
 
     public ConferenciaDTO() {
     }

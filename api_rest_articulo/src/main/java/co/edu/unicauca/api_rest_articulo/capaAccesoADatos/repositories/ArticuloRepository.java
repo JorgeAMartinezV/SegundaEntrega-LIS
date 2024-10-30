@@ -13,15 +13,22 @@ public class ArticuloRepository {
 
     public ArticuloRepository() {
         this.listaArticulos = new ArrayList<ArticuloEntity>();
-        //cargarArticulos();
+        cargarArticulos();
         pos=this.listaArticulos.size()+1;
     }
 
+    /**
+     * Metodo para listar todos los articulos 
+     */
     public List<ArticuloEntity> findAll() {
         System.out.println("Invocando a listarArticulos");
         return this.listaArticulos;
     }
 
+    /**
+     * Metodo para buscar un articulo por su id
+     * @param id Identificador del articulo    
+    */
     public ArticuloEntity findById(Integer id) {
         System.out.println("Invocando a consultar un articulo");
         ArticuloEntity objArticulo = null;
@@ -34,6 +41,10 @@ public class ArticuloRepository {
         return objArticulo;
     }
 
+    /**
+     * Metodo para registrar un articulo
+     * @param articulo Objeto de tipo ArticuloEntity
+     */
     public ArticuloEntity save(ArticuloEntity articulo) {
         System.out.println("Invocando a registrar articulo");
         ArticuloEntity objArticulo = null;
@@ -45,6 +56,11 @@ public class ArticuloRepository {
         return objArticulo;
     }
 
+    /**
+     * Metodo para actualizar un articulo
+     * @param id Identificador del articulo a actualizar
+     * @param articulo Objeto de tipo ArticuloEntity
+     */
     public ArticuloEntity update(Integer id, ArticuloEntity articulo) {
         System.out.println("Invocando a actualizar articulo");
         ArticuloEntity objArticulo = null;
@@ -62,6 +78,10 @@ public class ArticuloRepository {
         return objArticulo;
     }
 
+    /**
+     * Metodo para eliminar un articulo
+     * @param id Identificador del articulo a eliminar
+     */
     public boolean delete(Integer id) {
         System.out.println("Invocando a eliminar articulo");
         boolean result = false;
@@ -73,9 +93,24 @@ public class ArticuloRepository {
         return result;
     }
 
-    /*private void cargarArticulos() {
-        listaArticulos.add(new ArticuloEntity(1, "Articulo 1", "Revista 1", "Autor 1", 1));
-        listaArticulos.add(new ArticuloEntity(2, "Articulo 2", "Revista 2", "Autor 2", 1));
-        listaArticulos.add(new ArticuloEntity(3, "Articulo 3", "Revista 3", "Autor 3", 1));
-    }*/
+    /**
+     * Metodo para verificar si un articulo existe
+     * @param id Identificador del articulo
+     */
+    public boolean articleExist(Integer id) {
+        boolean result = false;
+        for (ArticuloEntity articulo : listaArticulos) {
+            if (articulo.getId() == id) {
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
+
+    private void cargarArticulos() {
+        listaArticulos.add(new ArticuloEntity(1, "Articulo 1", "Revista 1", "Articulo para prueba numero 1", "Prueba, Articulo", 15));
+        listaArticulos.add(new ArticuloEntity(2, "Articulo 2", "Revista 2", "Articulo para prueba numero 2", "Prueba2, Articulo2", 20));
+        listaArticulos.add(new ArticuloEntity(3, "Articulo 3", "Revista 3", "Articulo para prueba numero 3", "Prueba3, Articulo3", 5));
+    }
 }

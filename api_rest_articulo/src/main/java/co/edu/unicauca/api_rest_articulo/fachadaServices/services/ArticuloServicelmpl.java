@@ -82,4 +82,9 @@ public class ArticuloServicelmpl implements IArticuloService {
         ArticulosConConferenciasDTO objArticuloConferencia = new ArticulosConConferenciasDTO(objArticuloDTO, listaDeConferencias);
         return objArticuloConferencia;
     }
+
+    @Override
+    public boolean articleExists(Integer id) {
+        return this.servicioAccesoBaseDatos.articleExist(id);
+    }
 }

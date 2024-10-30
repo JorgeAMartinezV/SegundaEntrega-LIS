@@ -81,5 +81,15 @@ public class ConferenciaServicelmpl implements IConferenciaService {
     public boolean delete(Integer id) {
         return this.servicioAccesoBaseDatos.delete(id);
     }
+
+    @Override
+    public boolean existConference(Integer id) {
+        return this.servicioAccesoBaseDatos.existConference(id);
+    }
+
+    @Override
+    public int getCantArticulos(Integer id) {
+        return this.servicioAccesoBaseDatos.getCantArticles(id);
+    }
     
 }

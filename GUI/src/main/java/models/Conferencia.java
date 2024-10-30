@@ -12,7 +12,7 @@ public class Conferencia {
     private float registrationCost; /*Costo de la inscripción a la conferencia */
     private String location; /*Ubicación de la conferencia */
     private int cantMaxArticles;
-    private List<Integer> articles; /*Artículos asociados a la conferencia */
+    private List<Articulo> articles; /*Artículos asociados a la conferencia */
 
 
     public Conferencia(String name, Date startDate, Date endDate, float registrationCost, String location, int cantMaxArticles) {
@@ -56,7 +56,7 @@ public class Conferencia {
         this.id = id;
     }
 
-    public List<Integer> getArticles() {
+    public List<Articulo> getArticles() {
         return articles;
     }
 
