@@ -230,6 +230,7 @@ public class VtnRegistrarArticulo extends javax.swing.JFrame {
         if(!objArticulo.equals(null))
         {
             Utilidades.mensajeExito("Registro exitoso", "Registro exitoso");
+            setVisible(false);
         }
         else
         {

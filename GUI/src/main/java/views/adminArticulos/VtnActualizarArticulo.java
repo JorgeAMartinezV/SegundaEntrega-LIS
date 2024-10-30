@@ -250,6 +250,7 @@ public class VtnActualizarArticulo extends javax.swing.JFrame {
        if(!objArticulo.equals(null))
        {
            Utilidades.mensajeExito("Artículo actualizado exitosamente", "Artículo actualizado");
+           setVisible(false);
        }
        else
        {
